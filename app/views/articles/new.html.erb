@@ -1,6 +1,6 @@
 <h1>New article</h1>
-
-<%= form_for :article do |f| %>
+<!-- articles_path =  '/articles'-->
+<%= form_for :article, url: articles_path do |f| %>
 	<p>
 		<!-- Title<br> -->
 		<%= f.label :title %><br>
