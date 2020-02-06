@@ -13,10 +13,16 @@ class ContactsController < ApplicationController
 
     # получение параметра из БД
     @contact = Contact.new(contact_params)
-    # сохранение полученных данных в БД
-    @contact.save
 
-
+    # сохранение полученных данных в БД 
+    # @contact.save и вызов представления create.html.erb
+    # если valid то возврашаем форму new
+    # ключ - action:   значение - возвращает форму new
+    if @contact.valid?
+      @contact.save
+    else
+      render action: 'new'
+    end
   end
 
   private
