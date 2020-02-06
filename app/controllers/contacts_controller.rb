@@ -16,7 +16,7 @@ class ContactsController < ApplicationController
 
     # сохранение полученных данных в БД 
     # @contact.save и вызов представления create.html.erb
-    # если valid то возврашаем форму new
+    # если не valid то возврашаем форму new
     # ключ - action:   значение - возвращает форму new
     if @contact.valid?
       @contact.save
