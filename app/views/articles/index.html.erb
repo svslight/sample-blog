@@ -4,6 +4,10 @@
 
 	<h2><%= article.title %></h2>
 	<p><%= article.text %></p>
+
+	 <!-- Добавим ссылку на пост -->
+	<p><%= link_to  "Show article", article_path(article) %> | 
+		<%= link_to  "Edit article", edit_article_path(article) %></p>
  	<hr>
 
 
