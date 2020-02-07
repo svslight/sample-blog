@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
     # сохранение полученных данных в БД 
     if @article.valid?
       @article.save
-      redirect_to @article
+      redirect_to @article   # /article/id - Action show
     else
       render action: 'new'
     end
