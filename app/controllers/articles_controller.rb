@@ -14,6 +14,7 @@ class ArticlesController < ApplicationController
 
   def create
     # выводит содержимое на экран
+    # render - возвращает данные в текстовом виде
     # render plain: params[:article].inspect
 
     # получение параметра из БД
@@ -21,6 +22,8 @@ class ArticlesController < ApplicationController
 
     # сохранение полученных данных в БД 
     # по-умолчанию save выполняет valid (@article.valid?)
+    # render - возвращает, то что сгенерировал action в new (не прерывает тек.запрос)
+    # redirect_to - прерывает запрос и возвращает браузер на указанную страницу
     if @article.save
       redirect_to @article   # /article/id - Action show
     else
