@@ -3,7 +3,7 @@
 	<%= @article.text %>
 </p>
 
-<h2>Comments</h2>
+<h2>Комментарии:</h2>
 
 <% @article.comments.each do |comment| %>
 	<p>
@@ -12,19 +12,19 @@
 	</p>
 <% end %>
 
-<h2>Add comment</h2>
+<h2>Добавить Комментарии:</h2>
 <p>
 	<%= form_for([@article, @article.comments.build]) do |f| %>
 		<p>
-			<%= f.label :author %><br>
+			<%= f.label :Автор %><br>
 			<%= f.text_field :author %>
 		</p>
 
 		<p>
-			<%= f.label :body %><br>
+			<%= f.label :Содержание %><br>
 			<%= f.text_area :body %>
 		</p>
 
-		<p><%= f.submit %></p>
+		<p><%= f.submit :Сохранить%></p>
 	<% end %>
 </p>
