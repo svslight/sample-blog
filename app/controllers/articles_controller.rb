@@ -1,5 +1,8 @@
 class ArticlesController < ApplicationController
 
+  # блокирует на всех страницах и переходит на форму регистрации
+  before_action :authenticate_user!
+
   def index
     @articles = Article.all
   end
