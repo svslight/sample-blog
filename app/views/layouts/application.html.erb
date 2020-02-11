@@ -10,8 +10,20 @@
   </head>
   <body>
     <!-- укзываем helper (а не url), где хранится path для входа и выхода -->
-    <%= link_to 'Sign in', new_user_session_path %> | <%= link_to 'sign_out', destroy_user_session_path, method: :delete %>
-    <!-- <a href="/users/sign_in">Sign in</a> | <a href="/users/sign_out" data-method="delete">Sign out</a> -->
+
+    <% if user_signed_in? %>
+
+      <%= link_to 'Sign_out', destroy_user_session_path, method: :delete %>
+
+    <% else %>
+
+      <%= link_to 'Sign in', new_user_session_path %> 
+
+    <% end %>
+
+
+  
+
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
