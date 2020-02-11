@@ -9,8 +9,9 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   </head>
   <body>
-
-    <a href="/users/sign_in">Sign in</a> | <a href="/users/sign_out" data-method="delete">Sign out</a>
+    <!-- укзываем helper (а не url), где хранится path для входа и выхода -->
+    <%= link_to 'Sign in', new_user_session_path %> | <%= link_to 'sign_out', destroy_user_session_path, method: :delete %>
+    <!-- <a href="/users/sign_in">Sign in</a> | <a href="/users/sign_out" data-method="delete">Sign out</a> -->
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
