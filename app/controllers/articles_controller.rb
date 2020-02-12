@@ -1,7 +1,10 @@
 class ArticlesController < ApplicationController
 
-  # блокирует на всех страницах и переходит на форму регистрации
-  before_action :authenticate_user!
+  # before_action - блокирует на всех страницах и переходит на форму регистрации, 
+  # если не зарегистрировались
+  # authenticate_user - применяется для всех action
+  # сделаем проверку авторизации только для добавления, редактирования, удаления статьи
+  before_action :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
 
   def index
     @articles = Article.all
