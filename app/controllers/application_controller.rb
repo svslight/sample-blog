@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   
-  protect_from_forgery with: :exception
+  # protect_from_forgery with: :exception
 
   # Разрешить прием параметра username
   # before_action - выполняется перед каждым action
@@ -9,8 +9,8 @@ class ApplicationController < ActionController::Base
   private
 
   def configure_permitted_parameters
-    # devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
-    devise_parameter_sanitizer.permit(:sign_up) << :username
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
+    # devise_parameter_sanitizer.permit(:sign_up) << :username
   end
 
 end
